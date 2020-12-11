@@ -1,18 +1,24 @@
 <template>
   <div id="home">
-    <p>这是home页</p>
-    <a-button type="primary">登录</a-button>
+    <Header></Header>
+    <home-menu></home-menu>
   </div>
 </template>
 
 <script>
-import { Button } from 'ant-design-vue';
+import Header from 'components/header/Header';
+import HomeMenu from 'components/home-menu/HomeMenu';
 export default {
   name: 'Home',
   components: {
-    AButton: Button
+    Header,
+    HomeMenu
   }
 };
 </script>
 
-,<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#home {
+  height: 100%;
+}
+</style>

@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import testRoutes from './testRoutes';
 
 const routes: Array<RouteRecordRaw> = [
+  ...testRoutes,
   {
     path: '/login',
     name: 'Login',
@@ -20,11 +22,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/500',
     name: 'Err500',
     component: () => import('views/error/500.vue')
-  },
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('views/home/Home.vue')
   },
   {
     path: '/:pathMatch(.*)',

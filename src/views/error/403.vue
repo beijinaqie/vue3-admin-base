@@ -16,12 +16,8 @@
 </template>
 
 <script>
-import { Button } from 'ant-design-vue';
 export default {
-  name: 'Err403',
-  components: {
-    AButton: Button
-  }
+  name: 'Err403'
 };
 </script>
 
