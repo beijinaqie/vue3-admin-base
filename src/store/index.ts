@@ -1,8 +1,8 @@
 import { createStore } from 'vuex';
+import menus from './modules/menus';
 
 export default createStore({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
+  modules: {
+    menus
+  }
 });

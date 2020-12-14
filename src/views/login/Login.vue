@@ -48,7 +48,6 @@
 </template>
 
 <script>
-import { UserOutlined, LockOutlined } from '@ant-design/icons-vue';
 import { reactive, toRaw } from 'vue';
 import { useForm } from '@ant-design-vue/use';
 
@@ -100,10 +99,6 @@ const rules = reactive({
 
 export default {
   name: 'Login',
-  components: {
-    UserOutlined,
-    LockOutlined
-  },
   setup() {
     const login = () => {
       console.log(toRaw(form));

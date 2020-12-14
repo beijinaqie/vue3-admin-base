@@ -9,12 +9,34 @@ import {
   Pagination,
   message,
   Modal,
-  Menu
+  Menu,
+  Breadcrumb,
+  Dropdown,
+  Badge,
+  ConfigProvider,
+  Avatar,
+  Divider
 } from 'ant-design-vue';
+import * as antIcons from '@ant-design/icons-vue';
 
 export default {
   install(app: App<Element>) {
-    const antCom = [Row, Col, Button, Input, Form, Table, Pagination, Menu];
+    const antCom = [
+      Row,
+      Col,
+      Button,
+      Input,
+      Form,
+      Table,
+      Pagination,
+      Menu,
+      Breadcrumb,
+      Dropdown,
+      Badge,
+      ConfigProvider,
+      Avatar,
+      Divider
+    ];
     const antCtx = { message, Modal };
 
     // 注册全局ant组件
@@ -26,6 +48,10 @@ export default {
     Object.keys(antCtx).map(ctx => {
       app.config.globalProperties[`$${ctx}`] = antCtx[ctx];
       app.provide(`$${ctx}`, antCtx[ctx]);
+    });
+
+    Object.keys(antIcons).map(ant => {
+      app.component(ant, antIcons[ant]);
     });
   }
 };

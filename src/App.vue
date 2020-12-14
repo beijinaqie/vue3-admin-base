@@ -8,8 +8,17 @@
 </template>
 
 <script>
+import zhCN from 'ant-design-vue/es/locale/zh_CN';
+import { ref } from 'vue';
 export default {
-  name: 'App'
+  name: 'App',
+  setup() {
+    const locale = ref(zhCN);
+
+    return {
+      locale
+    };
+  }
 };
 </script>
 
@@ -21,5 +30,6 @@ export default {
   width: 100%;
   min-width: 1366px;
   min-height: 100%;
+  background-color: #f5f7f9;
 }
 </style>

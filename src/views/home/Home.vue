@@ -1,7 +1,12 @@
 <template>
   <div id="home">
     <Header></Header>
-    <home-menu></home-menu>
+    <div class="main-wrap">
+      <home-menu></home-menu>
+      <div class="main">
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,5 +25,12 @@ export default {
 <style lang="scss" scoped>
 #home {
   height: 100%;
+  .main-wrap {
+    display: flex;
+    .main {
+      min-width: calc(100vw - 256px);
+      min-height: calc(100vh - 64px);
+    }
+  }
 }
 </style>

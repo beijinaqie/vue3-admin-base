@@ -1,19 +1,21 @@
-import { createApp } from 'vue';
-import App from './App.vue';
+import { createApp, App } from 'vue';
+import AppComponent from './App.vue';
 import router from './router';
 import store from './store';
-// 样式重置
 import 'normalize.css';
-// 全局组件注册
 import antComponents from '@/components/common/index';
-// pc自适应
 import autoRem from '@/plugins/auto-computed';
+import plugins from '@/plugins/index';
 
-const app = createApp(App);
+const app = createApp(AppComponent);
 
 app
   .use(antComponents)
-  .use(autoRem)
+  .use(plugins)
+  .use(autoRem, { minWidth: 1920 })
   .use(store)
   .use(router)
   .mount('#app');
+
+declare const window: Window & { $app: App<Element> };
+window.$app = app;
